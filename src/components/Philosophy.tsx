@@ -22,78 +22,69 @@ export function Philosophy() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="philosophy" className="py-32 lg:py-40 px-6 lg:px-12">
+    <section ref={sectionRef} id="games" className="py-20 px-6 lg:px-12 bg-gradient-to-b from-yellow-50 to-pink-50">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Image */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div
-            className={`relative aspect-[4/5] bg-sand overflow-hidden transition-all duration-1000 ${
+            className={`relative aspect-square bg-gradient-to-br from-purple-200 to-pink-200 rounded-3xl overflow-hidden shadow-2xl transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
             }`}
           >
-            <img
-              src="/minimalist-japanese-interior-design-with-natural-w.jpg"
-              alt="Минималистичный интерьер с натуральным деревом"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            {/* Overlay accent */}
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-terracotta/80" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-9xl animate-bounce">🎮</div>
+            </div>
+            <div className="absolute top-4 right-4 text-6xl">🌟</div>
+            <div className="absolute bottom-4 left-4 text-6xl">🎨</div>
           </div>
 
-          {/* Content */}
           <div className="lg:pl-8">
             <p
-              className={`text-xs tracking-[0.3em] uppercase text-terracotta mb-6 transition-all duration-1000 delay-200 ${
+              className={`text-2xl font-display font-bold text-orange-500 mb-4 transition-all duration-1000 delay-200 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Наша философия
+              🎯 Весёлые игры
             </p>
 
             <h2
-              className={`font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] text-foreground mb-8 text-balance transition-all duration-1000 delay-300 ${
+              className={`font-display text-5xl md:text-6xl font-bold leading-tight text-purple-700 mb-8 transition-all duration-1000 delay-300 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Искусство
-              <span className="italic"> осознанной</span>
-              <br />
-              жизни
+              Играй и учись вместе с нами!
             </h2>
 
             <div
-              className={`space-y-6 text-muted-foreground leading-relaxed transition-all duration-1000 delay-500 ${
+              className={`space-y-6 text-xl text-gray-700 leading-relaxed transition-all duration-1000 delay-500 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <p>
-                Мы верим, что каждое пространство таит в себе потенциал для преображения. Не через добавление,
-                а через бережное вычитание — открывая то, что всегда было предначертано.
+              <p className="font-semibold">
+                Здесь ты найдёшь <span className="text-pink-600">загадки про животных</span>, 
+                <span className="text-green-600"> раскраски</span> и 
+                <span className="text-blue-600"> викторины</span>!
               </p>
               <p>
-                Наш подход вдохновлён японской концепцией <em className="text-foreground">ма</em> — глубокой
-                красотой пустоты — и скандинавским пониманием
-                <em className="text-foreground"> хюгге</em>, этого ощущения уютного умиротворения.
+                Собирай звёздочки ⭐, проходи уровни и становись настоящим знатоком природы!
               </p>
             </div>
 
-            {/* Stats */}
             <div
-              className={`grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-border transition-all duration-1000 delay-700 ${
+              className={`grid grid-cols-3 gap-6 mt-12 transition-all duration-1000 delay-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">12</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Лет опыта</p>
+              <div className="text-center p-4 bg-yellow-100 rounded-2xl">
+                <p className="font-display text-4xl font-bold text-yellow-600">50+</p>
+                <p className="text-sm font-semibold text-gray-600 mt-2">Игр</p>
               </div>
-              <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">140+</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Проектов</p>
+              <div className="text-center p-4 bg-green-100 rounded-2xl">
+                <p className="font-display text-4xl font-bold text-green-600">100+</p>
+                <p className="text-sm font-semibold text-gray-600 mt-2">Загадок</p>
               </div>
-              <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">8</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Наград</p>
+              <div className="text-center p-4 bg-pink-100 rounded-2xl">
+                <p className="font-display text-4xl font-bold text-pink-600">200+</p>
+                <p className="text-sm font-semibold text-gray-600 mt-2">Картинок</p>
               </div>
             </div>
           </div>

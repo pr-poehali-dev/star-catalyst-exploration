@@ -8,37 +8,40 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-12 pt-20">
-      {/* Subtle background texture */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-sand/30 to-background" />
+    <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-12 pt-20 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-sky-100 via-green-50 to-yellow-50" />
+      <div className="absolute top-10 left-10 text-6xl animate-bounce">🌈</div>
+      <div className="absolute top-20 right-20 text-5xl animate-pulse">☀️</div>
+      <div className="absolute bottom-32 left-1/4 text-6xl">🌳</div>
+      <div className="absolute bottom-20 right-1/3 text-5xl">🦋</div>
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Overline */}
         <p
-          className={`text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8 transition-all duration-1000 delay-300 ${
+          className={`text-lg font-display font-semibold text-green-600 mb-6 transition-all duration-1000 delay-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          Студия дизайна интерьеров
+          🌿 Привет, друзья! 🌿
         </p>
 
         {/* Main Headline */}
         <h1
-          className={`font-serif text-5xl md:text-7xl lg:text-8xl font-light leading-[1.1] tracking-tight text-foreground mb-8 text-balance transition-all duration-1000 delay-500 ${
+          className={`font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] text-green-700 mb-8 text-balance transition-all duration-1000 delay-500 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          Пространства,
-          <span className="block text-sage">которые дышат</span>
+          Давайте узнаем
+          <span className="block text-yellow-500">про природу! 🌻</span>
         </h1>
 
         {/* Subheadline */}
         <p
-          className={`text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-12 transition-all duration-1000 delay-700 ${
+          className={`text-xl md:text-2xl font-semibold text-blue-600 max-w-3xl mx-auto leading-relaxed mb-12 transition-all duration-1000 delay-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          Японский минимализм в сочетании со скандинавским теплом. Мы создаём интерьеры, где есть место и смыслу, и красоте.
+          Здесь ты найдёшь весёлые игры, узнаешь про животных 🐿️, растения 🌸 и отправишься в приключения!
         </p>
 
         {/* CTA */}
@@ -48,24 +51,16 @@ export function Hero() {
           }`}
         >
           <a
-            href="#contact"
-            className="group inline-flex items-center gap-3 px-8 py-4 bg-sage text-primary-foreground text-sm tracking-widest uppercase hover:bg-sage/90 transition-all duration-500"
+            href="#games"
+            className="group inline-flex items-center gap-3 px-10 py-5 bg-green-500 text-white text-xl font-display font-bold rounded-full hover:bg-green-600 hover:scale-110 transition-all duration-300 shadow-lg"
           >
-            Начать проект
-            <svg
-              className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            Начать игру! 🎮
           </a>
           <a
-            href="#philosophy"
-            className="inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-500"
+            href="#learn"
+            className="inline-flex items-center gap-2 px-10 py-5 bg-yellow-400 text-gray-800 text-xl font-display font-bold rounded-full hover:bg-yellow-500 hover:scale-110 transition-all duration-300 shadow-lg"
           >
-            Наш подход
+            Узнать больше 📚
           </a>
         </div>
       </div>
