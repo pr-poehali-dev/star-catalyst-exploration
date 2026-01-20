@@ -1,95 +1,81 @@
 import { useState } from "react"
+import Icon from "@/components/ui/icon"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-green-300 via-blue-300 to-purple-300 shadow-lg">
       <nav className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
-          <a href="/" className="font-serif text-2xl tracking-wide text-foreground">
-            Wabi
+          <a href="/" className="font-display text-3xl font-bold text-white flex items-center gap-2 hover:scale-110 transition-transform">
+            🌳 Мир Природы
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-12">
+          <div className="hidden md:flex items-center gap-8">
             <a
-              href="#philosophy"
-              className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-500"
+              href="#games"
+              className="text-lg font-display font-bold text-white hover:text-yellow-200 hover:scale-110 transition-all flex items-center gap-2"
             >
-              Философия
+              <Icon name="Gamepad2" size={24} />
+              Игры
             </a>
             <a
-              href="#services"
-              className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-500"
+              href="#learn"
+              className="text-lg font-display font-bold text-white hover:text-yellow-200 hover:scale-110 transition-all flex items-center gap-2"
             >
-              Услуги
+              <Icon name="BookOpen" size={24} />
+              Учиться
             </a>
             <a
-              href="#process"
-              className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-500"
+              href="#coloring"
+              className="text-lg font-display font-bold text-white hover:text-yellow-200 hover:scale-110 transition-all flex items-center gap-2"
             >
-              Процесс
-            </a>
-            <a
-              href="#contact"
-              className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-500"
-            >
-              Контакты
+              <Icon name="Palette" size={24} />
+              Раскраски
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden flex flex-col gap-1.5 p-2"
+            className="md:hidden bg-white rounded-full p-3 hover:scale-110 transition-transform"
             aria-label="Открыть меню"
           >
-            <span
-              className={`block w-6 h-px bg-foreground transition-transform duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
-            />
-            <span
-              className={`block w-6 h-px bg-foreground transition-opacity duration-300 ${isMenuOpen ? "opacity-0" : ""}`}
-            />
-            <span
-              className={`block w-6 h-px bg-foreground transition-transform duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-            />
+            {isMenuOpen ? (
+              <Icon name="X" size={28} className="text-purple-600" />
+            ) : (
+              <Icon name="Menu" size={28} className="text-purple-600" />
+            )}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-500 ease-out ${isMenuOpen ? "max-h-64 pb-8" : "max-h-0"}`}
+          className={`md:hidden overflow-hidden transition-all duration-500 ease-out ${isMenuOpen ? "max-h-96 pb-6" : "max-h-0"}`}
         >
-          <div className="flex flex-col gap-6 pt-4">
+          <div className="flex flex-col gap-4 pt-4 bg-white/90 rounded-2xl p-6 mt-2">
             <a
-              href="#philosophy"
+              href="#games"
               onClick={() => setIsMenuOpen(false)}
-              className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xl font-display font-bold text-purple-600 hover:text-green-600 transition-colors flex items-center gap-3 p-3 hover:bg-yellow-100 rounded-xl"
             >
-              Философия
+              <Icon name="Gamepad2" size={28} />
+              🎮 Игры
             </a>
             <a
-              href="#services"
+              href="#learn"
               onClick={() => setIsMenuOpen(false)}
-              className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xl font-display font-bold text-purple-600 hover:text-green-600 transition-colors flex items-center gap-3 p-3 hover:bg-yellow-100 rounded-xl"
             >
-              Услуги
+              <Icon name="BookOpen" size={28} />
+              📚 Учиться
             </a>
             <a
-              href="#process"
+              href="#coloring"
               onClick={() => setIsMenuOpen(false)}
-              className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xl font-display font-bold text-purple-600 hover:text-green-600 transition-colors flex items-center gap-3 p-3 hover:bg-yellow-100 rounded-xl"
             >
-              Процесс
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Контакты
+              <Icon name="Palette" size={28} />
+              🎨 Раскраски
             </a>
           </div>
         </div>
